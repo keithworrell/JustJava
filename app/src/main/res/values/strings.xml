@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Just Java</string>
+
+    /***
+    * activity_main default text
+    ***/
+    <string name="welcome_text">Welcome to Paly Rise &amp; Grind!</string>
+    <string name="customer_name_header">Customer Name</string>
+    <string name="customer_name_text">Anonymous</string>
+    <string name="coffee_quantity_header">Quantity of Coffee</string>
+    <string name="coffee_decrement_button">-</string>
+    <string name="coffee_quantity">0</string>
+    <string name="coffee_increment_button">+</string>
+
+    <string name="whipped_cream_checkbox">Whipped Cream\n ($0.50 each)</string>
+
+    <string name="price_preview">$0.00</string>
+    <string name="submit_button">Place Order</string>
+
+    /***
+    * order_summary default text
+    ***/
+    <string name="thank_you_text">Thank You for your Business!</string>
+    <string name="order_summary_header">Order Summary</string>
+    <string name="order_summary_text">Order Details</string>
+    <string name="next_order_button">Next Guest</string>
+
 </resources>
