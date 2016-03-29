@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Uri data = intent.getData();
 
         final TextView mIntent = (TextView) findViewById(R.id.intent);
-        if ((action != null) && (mIntent != null)) {
+        if ((action != null) && (mIntent != null) && (data != null)) {
             String message = "I don't know what " + action + " is, but thank you for visiting from " + data.toString();
             mIntent.setText(message);
             mIntent.setVisibility(View.VISIBLE);
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(
                 R.id.quantity_text_view);
         if (quantityTextView != null) {
-            quantityTextView.setText(currentCustomer.quantityOfCoffee);
+            quantityTextView.setText(currentCustomer.quantityOfCoffeeAsString());
         } else {
             somethingWentWrong("display", "quantity_text_view null; impossible?");
         }

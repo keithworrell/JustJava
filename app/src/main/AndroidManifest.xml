@@ -3,8 +3,7 @@
     package="com.example.android.justjava">
     <!-- TODO Intents, how do they work!? -->
     <application
-        android:allowBackup="true"
-        android:fullBackupContent="@xml/myBackupScheme"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
