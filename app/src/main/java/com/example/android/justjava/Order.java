@@ -14,16 +14,21 @@ class Order {
 
     private final static double priceOfCoffee = 5.25d;
     private final static double priceOfWhippedCream = 0.50d;
+    private final static double priceOfChocolate = 0.65d;
 
     String name = "Anonymous";
     int orderNumber = 0;
     int quantityOfCoffee = 0;
     boolean hasWhippedCream = false;
+    boolean hasChocolate = false;
 
     public String getOrderTotal() {
         Double pricePerCup = priceOfCoffee;
         if (this.hasWhippedCream) {
             pricePerCup += priceOfWhippedCream;
+        }
+        if (this.hasChocolate) {
+            pricePerCup += priceOfChocolate;
         }
 
         double total = this.quantityOfCoffee * pricePerCup;

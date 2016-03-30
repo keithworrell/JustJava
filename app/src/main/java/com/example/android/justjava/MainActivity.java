@@ -78,9 +78,19 @@ public class MainActivity extends AppCompatActivity {
         orderMessage += "\n Order Number: " + currentCustomer.orderNumberAsString();
         orderMessage += "\n\n     Order Details -";
         orderMessage += "\n     " + currentCustomer.quantityOfCoffeeAsString() + " cups of coffee";
+
+        // TODO: this should be scalable. Step one, change this to a for...each to reduce code duplication.
+        boolean noAdditions = true;
+
         if (currentCustomer.hasWhippedCream) {
             orderMessage += "\n          add Whipped Cream";
-        } else {
+            noAdditions = false;
+        }
+        if (currentCustomer.hasChocolate) {
+            orderMessage += "\n          add Chocolate";
+            noAdditions = false;
+        }
+        if (noAdditions) {
             orderMessage += "\n          no additions";
         }
         orderMessage += "\n\n Order Total: " + currentCustomer.getOrderTotal();
@@ -121,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.whipped_cream_checkbox):
                 currentCustomer.hasWhippedCream = itemAdded.isChecked();
                 break;
+            case (R.id.chocolate_checkbox):
+                currentCustomer.hasChocolate = itemAdded.isChecked();
+                break;
         }
         display();
     }
@@ -156,6 +169,13 @@ public class MainActivity extends AppCompatActivity {
             whippedCream.setChecked(currentCustomer.hasWhippedCream);
         } else {
             somethingWentWrong("display", "whipped_cream_checkbox null; impossible?");
+        }
+        CheckBox chocolate = (CheckBox) findViewById(
+                R.id.chocolate_checkbox);
+        if (chocolate != null) {
+            chocolate.setChecked(currentCustomer.hasChocolate);
+        } else {
+            somethingWentWrong("display", "chocolate_checkbox null; impossible?");
         }
 
         TextView priceTextView = (TextView) findViewById(

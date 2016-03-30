@@ -47,7 +47,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <Button
@@ -71,15 +71,21 @@
                 android:text="@string/coffee_increment_button" />
         </LinearLayout>
 
+        <!-- Toppings -->
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
             style="@style/add_item_checkbox"
             android:text="@string/whipped_cream_checkbox" />
+        <CheckBox
+            android:id="@+id/chocolate_checkbox"
+            style="@style/add_item_checkbox"
+            android:text="@string/chocolate_checkbox" />
 
         <TextView
             android:id="@+id/price_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/price_preview"
             android:textColor="#000000"
             android:textSize="16sp"

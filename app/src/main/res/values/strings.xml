@@ -13,6 +13,7 @@
     <string name="coffee_increment_button">+</string>
 
     <string name="whipped_cream_checkbox">Whipped Cream\n ($0.50 each)</string>
+    <string name="chocolate_checkbox">Chocolate ($0.65 each)</string>
 
     <string name="price_preview">$0.00</string>
     <string name="submit_button">Place Order</string>
