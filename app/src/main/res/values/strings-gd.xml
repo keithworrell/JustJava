@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name"> Just Java </ sreang>
+
+    / ***
+    * Activity_main default teacsa
+    *** /
+    <string name="welcome_text"> F�ilte gu Paly Eirich & Amp; Beil! </ Sreang>
+    <string name="customer_name_header"> Luchd-cleachdaidh Ainm </ sreang>
+    <string name="default_name_edit_text"> Luchd-cleachdaidh Ainm </ sreang>
+    <string name="customer_name_text"> Anonymous </ sreang>
+    <string name="coffee_quantity_header"> meud de Coffee </ sreang>
+    <string name="coffee_decrement_button"> - </ sreang>
+    <string name="coffee_quantity"> 0 </ sreang>
+    <string name="coffee_increment_button"> + </ sreang>
+
+    <string name="whipped_cream_checkbox"> chuipeadh Cream \ n ($ 0.50 gach) </ sreang>
+    <string name="chocolate_checkbox"> Chocolate ($ 0.65 gach) </ sreang>
+
+    <string name="price_preview"> $ 0.00 </ sreang>
+    <string name="submit_button"> Place �rdugh </ sreang>
+
+    / ***
+    * Order_summary default teacsa
+    *** /
+    <string name="thank_you_text"> Tapadh leibh airson ur Gn�omhachais! </ Sreang>
+    <string name="order_summary_header"> �rdugh Ge�rr-chunntas </ sreang>
+    <string name="order_summary_text"> �rdugh Fiosrachadh </ sreang>
+    <string name="next_order_button"> ath Guest </ sreang>
+    <string name="email_order_button"> Send �rdugh </ sreang>
+
+</ resources>
