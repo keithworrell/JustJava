@@ -100,26 +100,42 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/order_heading_text_view"
-        style="@style/header"
-        android:padding="8dp"
-        android:text="@string/order_summary_header" />
+            <TextView
+                android:id="@+id/order_heading_text_view"
+                style="@style/header"
+                android:padding="8dp"
+                android:text="@string/order_summary_header" />
 
-    <TextView
-        android:id="@+id/order_summary_text_view"
-        style="@style/details_text"
-        android:text="@string/order_summary_text" />
+            <TextView
+                android:id="@+id/order_summary_text_view"
+                style="@style/details_text"
+                android:text="@string/order_summary_text" />
 
-    <Button
-        android:id="@+id/new_customer_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:onClick="newCustomer"
-        android:text="@string/next_order_button" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/email_order_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:onClick="emailOrder"
+                    android:text="@string/email_order_button" />
+
+                <Button
+                    android:id="@+id/new_customer_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:onClick="newCustomer"
+                    android:text="@string/next_order_button" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

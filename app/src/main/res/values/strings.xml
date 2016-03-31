@@ -6,6 +6,7 @@
     ***/
     <string name="welcome_text">Welcome to Paly Rise &amp; Grind!</string>
     <string name="customer_name_header">Customer Name</string>
+    <string name="default_name_edit_text">Customer Name</string>
     <string name="customer_name_text">Anonymous</string>
     <string name="coffee_quantity_header">Quantity of Coffee</string>
     <string name="coffee_decrement_button">-</string>
@@ -25,5 +26,6 @@
     <string name="order_summary_header">Order Summary</string>
     <string name="order_summary_text">Order Details</string>
     <string name="next_order_button">Next Guest</string>
+    <string name="email_order_button">Send Order</string>
 
 </resources>

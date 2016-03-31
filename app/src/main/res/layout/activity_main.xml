@@ -37,6 +37,7 @@
         <EditText
             android:id="@+id/customer_name_edit_text"
             style="@style/edit_text"
+            android:hint="@string/default_name_edit_text"
             android:inputType="textPersonName"
             android:text="@string/customer_name_text" />
 
@@ -72,6 +73,7 @@
         </LinearLayout>
 
         <!-- Toppings -->
+        <!-- TODO: Toppings and other items should be read in from an XML file that can be managed through another interface by the shop -->
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
             style="@style/add_item_checkbox"

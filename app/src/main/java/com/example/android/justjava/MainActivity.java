@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -72,14 +73,14 @@ public class MainActivity extends AppCompatActivity {
         display();
     }
 
-    @SuppressWarnings("unused") // Invoked by Order button
-    public void submitOrder(View view) {
+    public String orderSummary() {
         String orderMessage = "Name: " + currentCustomer.name;
         orderMessage += "\n Order Number: " + currentCustomer.orderNumberAsString();
         orderMessage += "\n\n     Order Details -";
         orderMessage += "\n     " + currentCustomer.quantityOfCoffeeAsString() + " cups of coffee";
 
-        // TODO: this should be scalable. Step one, change this to a for...each to reduce code duplication.
+        // TODO: scalability issue foreseen here.
+
         boolean noAdditions = true;
 
         if (currentCustomer.hasWhippedCream) {
@@ -95,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
         }
         orderMessage += "\n\n Order Total: " + currentCustomer.getOrderTotal();
 
+        return orderMessage;
+    }
+
+    @SuppressWarnings("unused") // Invoked by Order button
+    public void submitOrder(View view) {
+        String orderMessage = orderSummary();
         setContentView(R.layout.order_summary);
 
         TextView orderSummaryMessage = (TextView) findViewById(
@@ -111,12 +118,17 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.more_coffee:
-                currentCustomer.quantityOfCoffee += 1;
+                if (currentCustomer.quantityOfCoffee < 100) {
+                    currentCustomer.quantityOfCoffee += 1;
+                } else {
+                    Toast.makeText(this, "At this time we are limiting cups of coffee per order to 99.", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.less_coffee:
-                currentCustomer.quantityOfCoffee -= 1;
-                if (currentCustomer.quantityOfCoffee < 0) {
-                    currentCustomer.quantityOfCoffee = 0;
+                if (currentCustomer.quantityOfCoffee > 1) {
+                    currentCustomer.quantityOfCoffee -= 1;
+                } else {
+                    Toast.makeText(this, "If you want less then one cup of coffee, I don't know why you are here.", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -136,6 +148,25 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         display();
+    }
+
+    @SuppressWarnings("unused") // Invoked by Send Order button
+    public void emailOrder(View view) {
+        String[] address = {"keith.worrell@gmail.com"};
+        String subject = "Coffee Order for " + currentCustomer.name;
+        String orderMessage = orderSummary();
+        composeEmail(address, subject, orderMessage);
+    }
+
+    public void composeEmail(String[] addresses, String subject, String message) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     @SuppressWarnings("unused") // Invoked by New Customer button
